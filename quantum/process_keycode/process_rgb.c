@@ -15,6 +15,7 @@
  */
 #include "process_rgb.h"
 #include "rgb.h"
+#include <print.h>
 
 typedef void (*rgb_func_pointer)(void);
 
@@ -62,6 +63,7 @@ bool process_rgb(const uint16_t keycode, const keyrecord_t *record) {
                 rgblight_toggle();
                 return false;
             case RGB_MODE_FORWARD:
+                print("Choo Choo!");
                 handleKeycodeRGB(shifted, rgblight_step, rgblight_step_reverse);
                 return false;
             case RGB_MODE_REVERSE:
